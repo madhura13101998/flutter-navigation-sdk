@@ -70,6 +70,7 @@ class MarkerOptions {
     this.infoWindow = InfoWindow.noInfo,
     this.visible = true,
     this.zIndex = 0.0,
+    this.markerId,
   });
 
   /// Sets the alpha (opacity) of the marker.
@@ -125,6 +126,9 @@ class MarkerOptions {
   /// By default, the marker is visible; [visible] is true.
   final bool visible;
 
+  /// Custom markerId
+  final String? markerId;
+
   /// Sets the zIndex for the marker.
   ///
   /// By default, the marker is placed at the base of the drawing order; [zIndex] is 0.0
@@ -146,8 +150,10 @@ class MarkerOptions {
     InfoWindow? infoWindow,
     bool? visible,
     double? zIndex,
+    String? markerId,
   }) {
     return MarkerOptions(
+      markerId: markerId ?? this.markerId,
       alpha: alpha ?? this.alpha,
       anchor: anchor ?? this.anchor,
       draggable: draggable ?? this.draggable,
@@ -181,6 +187,7 @@ class MarkerOptions {
         rotation == other.rotation &&
         infoWindow == other.infoWindow &&
         visible == other.visible &&
+        markerId == other.markerId &&
         zIndex == other.zIndex;
   }
 
@@ -197,6 +204,7 @@ class MarkerOptions {
     infoWindow.hashCode,
     visible.hashCode,
     zIndex.hashCode,
+    markerId.hashCode,
   );
 }
 

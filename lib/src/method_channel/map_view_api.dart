@@ -796,7 +796,7 @@ class MapViewAPIImpl {
         options
             .map(
               (MarkerOptionsDto options) =>
-                  MarkerDto(markerId: _createMarkerId(), options: options),
+                  MarkerDto(markerId:options.markerId?? _createMarkerId(), options: options),
             )
             .toList();
 

@@ -733,6 +733,7 @@ class MarkerOptionsDto {
     required this.visible,
     required this.zIndex,
     required this.icon,
+    this.markerId,
   });
 
   double alpha;
@@ -757,6 +758,8 @@ class MarkerOptionsDto {
 
   ImageDescriptorDto icon;
 
+  String? markerId;
+
   List<Object?> _toList() {
     return <Object?>[
       alpha,
@@ -770,6 +773,7 @@ class MarkerOptionsDto {
       visible,
       zIndex,
       icon,
+      markerId,
     ];
   }
 
@@ -791,6 +795,7 @@ class MarkerOptionsDto {
       visible: result[8]! as bool,
       zIndex: result[9]! as double,
       icon: result[10]! as ImageDescriptorDto,
+      markerId: result[11] as String?,
     );
   }
 
