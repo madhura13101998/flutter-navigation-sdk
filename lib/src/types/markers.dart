@@ -69,6 +69,7 @@ class MarkerOptions {
       this.rotation = 0.0,
       this.infoWindow = InfoWindow.noInfo,
       this.visible = true,
+      this.markerId,
       this.zIndex = 0.0});
 
   /// Sets the alpha (opacity) of the marker.
@@ -129,6 +130,9 @@ class MarkerOptions {
   /// By default, the marker is placed at the base of the drawing order; [zIndex] is 0.0
   final double zIndex;
 
+  //Custom Marker Id
+  final String? markerId;
+
   /// Create copy of [MarkerOptions] with specified parameters
   MarkerOptions copyWith(
       {double? alpha,
@@ -144,8 +148,10 @@ class MarkerOptions {
       String? title,
       InfoWindow? infoWindow,
       bool? visible,
+      String? markerId,
       double? zIndex}) {
     return MarkerOptions(
+        markerId: markerId,
         alpha: alpha ?? this.alpha,
         anchor: anchor ?? this.anchor,
         draggable: draggable ?? this.draggable,
@@ -178,6 +184,7 @@ class MarkerOptions {
         rotation == other.rotation &&
         infoWindow == other.infoWindow &&
         visible == other.visible &&
+        markerId == other.markerId &&
         zIndex == other.zIndex;
   }
 

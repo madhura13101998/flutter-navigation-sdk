@@ -40,6 +40,7 @@ extension ConvertMarkerOptions on MarkerOptions {
   MarkerOptionsDto toDto() {
     return MarkerOptionsDto(
         alpha: alpha,
+        markerId: markerId,
         anchor: anchor.toDto(),
         draggable: draggable,
         flat: flat,
@@ -60,6 +61,7 @@ extension ConvertMarkerOptionsDto on MarkerOptionsDto {
   MarkerOptions toMarkerOptions() {
     return MarkerOptions(
         alpha: alpha,
+        markerId: markerId,
         anchor: anchor.toMarkerAnchor(),
         draggable: draggable,
         flat: flat,

@@ -184,6 +184,7 @@ class MarkerOptionsDto {
       required this.infoWindow,
       required this.visible,
       required this.zIndex,
+      required this.markerId,
       required this.icon});
 
   final double alpha;
@@ -197,6 +198,8 @@ class MarkerOptionsDto {
   final bool visible;
   final double zIndex;
   final ImageDescriptorDto icon;
+  final String? markerId;
+
 }
 
 class ImageDescriptorDto {
